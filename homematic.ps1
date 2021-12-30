@@ -4,7 +4,7 @@ $culture = New-Object CultureInfo("en-US")
 [System.Threading.Thread]::CurrentThread.CurrentUICulture = $culture
 [System.Threading.Thread]::CurrentThread.CurrentCulture = $culture
 
-$conf = Get-Content "/root/homematic-checkmk/homematic-checkmk.conf" | ConvertFrom-Json
+$conf = Get-Content "/etc/check_mk/homematic-checkmk.conf" | ConvertFrom-Json
 
 $doc = New-Object System.Xml.XmlDocument
 $doc.Load($conf.XMLUrl)
